@@ -1,0 +1,14 @@
+*.swp
+*.suo
+_ReSharper.*
+bin
+obj
+*.user
+*.vssscc
+*.vspscc
+csx
+*.build.csdef
+*ncrunch*
+*~
+TestResults
+*.dotCover
