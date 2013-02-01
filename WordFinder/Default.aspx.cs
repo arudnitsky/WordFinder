@@ -19,6 +19,7 @@ namespace WordFinder
       protected void Go_Click( object sender, EventArgs e )
       {
          var result = _engine.FindWords( Letters.Text.ToCharArray().ToList() );
+         result.Sort();
          FoundWords.Text = string.Join( ", ", result);
       }
    }
