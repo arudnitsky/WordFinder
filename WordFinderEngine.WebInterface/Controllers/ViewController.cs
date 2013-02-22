@@ -18,11 +18,33 @@ namespace WordFinderEngine.WebInterface.Controllers
 
           var engine = new Engine();
           var words = engine.FindWords( new List<char>( letters ) );
-          words.Sort( new LengthComparer() );
+          words.Sort( new ScoreComparer() );
+          words.Reverse();
           return PartialView( words );
        }
 
     }
+
+   public class ScoreComparer : IComparer<Word>
+   {
+      public int Compare( Word x, Word y )
+      {
+         if ( x.PointValue > y.PointValue )
+         {
+            return 1;
+         }
+
+         else if ( x.PointValue < y.PointValue )
+         {
+            return -1;
+         }
+
+         else
+         {
+            return 1;
+         }
+      }
+   }
 
     public class LengthComparer : IComparer<string>
     {
