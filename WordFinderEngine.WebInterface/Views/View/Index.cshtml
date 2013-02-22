@@ -1,0 +1,23 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "title";
+}
+
+<html>
+<head>
+    <script src="../../Scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        function loadResults() {
+            $('#result-container').load('@Url.RouteUrl( "Default", new { controller = "View", action = "GetWords" } )' + '/' + $('#inputbox').val());
+        }
+    </script>
+</head>
+<h2>Cheating at Words with Friends!</h2>
+<br />
+<body>
+    <label>Enter some letters</label><input id="inputbox" type="text" value="" onkeyup="loadResults()"/>
+    <br />
+    <div id="result-container">
+    </div>
+</body>
+</html>
