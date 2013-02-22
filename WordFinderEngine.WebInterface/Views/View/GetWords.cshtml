@@ -1,0 +1,6 @@
+﻿@model System.Collections.Generic.List<WordFinderEngine.Word>
+
+@foreach ( var w in Model )
+{
+    @(w.Text + " ( " + w.PointValue + " )") <br />
+}

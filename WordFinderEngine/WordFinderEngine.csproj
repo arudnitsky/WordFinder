@@ -36,11 +36,13 @@
   <ItemGroup>
     <Compile Include="IEngine.cs" />
     <Compile Include="NLetterWordList.cs" />
+    <Compile Include="PointValueLookup.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Word.cs" />
     <Compile Include="WordFinderEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

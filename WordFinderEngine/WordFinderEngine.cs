@@ -25,11 +25,11 @@ namespace WordFinderEngine
          _dictionary = dictionary;
       }
 
-      public List<string> FindWords( List<char> letters )
+      public List<Word> FindWords( List<char> letters )
       {
          var wordList = _dictionary.Where( word => CanCreateWordFromLetters( word, letters ) ).ToList();
 
-         return wordList;
+         return wordList.Select( w => new Word( w ) ).ToList();
       }
 
       private static bool CanCreateWordFromLetters( string word, List<char> letters )
